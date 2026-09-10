@@ -1,6 +1,6 @@
 <h1>Listado de Proveedores</h1>
 
-<table border="5">
+<table border="1">
     <tr>
         <th>Nombre</th>
         <th>Teléfono</th>
