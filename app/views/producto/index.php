@@ -31,3 +31,4 @@
         <td><?= $producto['nombre_proveedor'] ?></td>
     </tr>
 </table>
+
