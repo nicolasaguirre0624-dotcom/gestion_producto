@@ -1,5 +1,5 @@
 <h1>Listado de Clientes</h1>
-<table border="1">
+<table border="2">
     <tr>
         <th>Nombre</th>
         <th>documento</th>
