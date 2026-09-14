@@ -8,8 +8,10 @@ class CategoriaController {
         $this->modelo = new Categoria();
     }
 
-    public function index() {
-        $categorias = $this->modelo->obtenerTodo();
-        require_once __DIR__ . "/../views/categoria/index.php";
-    }
+   public function index() {
+    $categoriaModel = new Categoria();
+    $categorias = $categoriaModel->obtenerTodo();
+
+    require_once __DIR__ . '/../views/categoria/index.php';
+}
 }

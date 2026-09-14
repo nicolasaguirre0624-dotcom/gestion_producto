@@ -1,6 +1,6 @@
 <h1>Listado Categorías</h1>
 
-<table border="1" cellpadding="5" cellspacing="0">
+<table border="2" cellpadding="5" cellspacing="0">
     <thead>
         <tr>
             <th>ID</th>

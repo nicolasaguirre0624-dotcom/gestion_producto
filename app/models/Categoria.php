@@ -10,7 +10,7 @@ class Categoria {
     }
 
     public function obtenerTodo() {
-        $sql = "SELECT * FROM Categorias";
+      $sql = "SELECT * FROM Categorias";
         $consulta = $this->connection->query($sql);
         return $consulta->fetchAll(PDO::FETCH_ASSOC);
     }
