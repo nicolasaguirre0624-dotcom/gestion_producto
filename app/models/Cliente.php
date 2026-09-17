@@ -10,13 +10,17 @@ class Cliente {
     }
 
     public function getAll() {
-        $sql = "SELECT id, nombre, documento, correo, telefono, fecha_registro FROM cliente";
+        $sql = "SELECT id, nombre, documento, correo, telefono, fecha_registro 
+        FROM cliente 
+        ORDER BY id";
         $consulta = $this->connection->query($sql);
         return $consulta->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function getById($id) {
-        $sql = "SELECT id, nombre, documento, correo, telefono, fecha_registro FROM cliente WHERE id = :id";
+        $sql = "SELECT id, nombre, documento, correo, telefono, fecha_registro 
+        FROM cliente 
+        WHERE id = :id";
         $consulta = $this->connection->prepare($sql);
         $consulta->bindParam(':id', $id, PDO::PARAM_INT);
         $consulta->execute();

@@ -19,12 +19,16 @@ class Database {
        
     }
 
+  
     public function connect (){
         $dsn = "mysql:host={$this->host};port={$this->port};dbname={$this->nombredb}";
 
         $this->connection = new PDO ($dsn,$this->user,$this->password);
 
         return $this->connection;
+        
+        $this ->connection->setAttribute(PDO::ATTR_AUTOCOMMIT, PDO::ERRMODE_EXCEPTION);
     }
+    
 }
    
