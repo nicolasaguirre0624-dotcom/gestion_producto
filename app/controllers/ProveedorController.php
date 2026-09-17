@@ -1,11 +1,15 @@
 <?php
-require_once __DIR__ . '/../models/Proveedor.php';
+require_once __DIR__ . "/../models/Proveedor.php";
 
-class ProveedoresController {
+class ProveedorController {
+    private $model;
+
+    public function __construct() {
+        $this->model = new Proveedor();
+    }
+
     public function index() {
-        $proveedorModel = new Proveedor();
-        $proveedores = $proveedorModel->getAll();
-
-        require_once __DIR__ . '/../views/proveedor/index.php';
+        $proveedores = $this->model->getAll();
+        require_once __DIR__ . "/../views/proveedor/index.php";
     }
 }

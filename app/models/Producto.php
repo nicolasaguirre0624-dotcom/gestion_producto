@@ -31,12 +31,15 @@ class Producto {
                     proveedor.nombre AS proveedor_nombre,
                     categorias.nombre AS nombre_categoria
                 FROM productos 
-                INNER JOIN proveedor ON productos.nombre_proveedor = proveedor.nombre
-                INNER JOIN categorias ON productos.nombre_categoria = categorias.nombre
+                INNER JOIN proveedor ON productos.id_proveedor = proveedor.id
+                INNER JOIN categorias ON productos.id_categoria = categorias.id
                 WHERE productos.id = :id";
 
-        $stmt = $this->connection->prepare($sql);
-        $stmt->execute([':id' => $id]);
-        return $stmt->fetch(PDO::FETCH_ASSOC);
+               
+
+        $consulta = $this->connection->prepare($sql);
+        $consulta->bindParam(':id', $id, PDO::PARAM_INT);
+        $consulta->execute();
+        return $consulta->fetch(PDO::FETCH_ASSOC);
     }
 }

@@ -7,11 +7,11 @@ require_once __DIR__ . '/../app/controllers/CategoriaController.php';
 $productoController = new ProductoController();
 $productoController->index();
 
-$clientesController = new ClientesController();
-$clientesController->index();
+$clienteController = new ClienteController();
+$clienteController->index();
 
-$proveedoresController = new ProveedoresController();
-$proveedoresController->index();
+$proveedorController = new ProveedorController();
+$proveedorController->index();
 
 $categoriaController = new CategoriaController();
 $categoriaController->index();

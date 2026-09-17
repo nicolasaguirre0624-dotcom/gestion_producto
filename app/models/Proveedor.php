@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../../config/Database.php';
+require_once __DIR__ . "/../../config/Database.php";
 
 class Proveedor {
     private $connection;
@@ -10,8 +10,20 @@ class Proveedor {
     }
 
     public function getAll() {
-        $sql = "SELECT * FROM Proveedor";
+        $sql = "SELECT id, nombre, direccion, telefono, correo 
+                FROM proveedor 
+                ORDER BY id";
         $consulta = $this->connection->query($sql);
         return $consulta->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function getById($id) {
+        $sql = "SELECT id, nombre, direccion, telefono, correo 
+                FROM proveedor 
+                WHERE id = :id";
+        $consulta = $this->connection->prepare($sql);
+        $consulta->bindParam(':id', $id, PDO::PARAM_INT);
+        $consulta->execute();
+        return $consulta->fetch(PDO::FETCH_ASSOC);
     }
 }
